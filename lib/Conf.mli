@@ -128,3 +128,11 @@ val update_value :
   t -> name:string -> value:string -> (t, Config_option.Error.t) Result.t
 
 val print_config : t -> unit
+
+val parse_line :
+     t
+  -> from:[< `Attribute | `File of Ocamlformat_stdlib.Fpath.t * int]
+  -> string
+  -> (t, Config_option.Error.t) Result.t
+(** [parse_line config from line] parses a configuration line and updates
+    [config] accordingly. *)

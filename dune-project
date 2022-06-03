@@ -103,3 +103,16 @@
    (>= 4.08))
   (csexp
    (>= 1.4.0))))
+
+(package
+ (name ocamlformat-web-ui)
+ (synopsis "Web interface to experiment with OCamlFormat")
+ (description
+  "OCamlFormat is a tool to automatically format Ocaml code in a uniform style. This package defines a web interface which allows to quickly try different configuration parameters")
+ (depends
+  (ocaml
+   (>= 4.08))
+  (ocamlformat
+   (= :version))
+  js_of_ocaml
+  js_of_ocaml-ppx))

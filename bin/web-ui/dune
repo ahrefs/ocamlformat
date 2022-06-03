@@ -1,0 +1,9 @@
+(executable
+ (name main)
+ (modules main)
+ (modes js)
+ (flags
+  (:standard -open Ocamlformat_stdlib))
+ (libraries ocamlformat js_of_ocaml)
+ (preprocess
+  (pps js_of_ocaml-ppx)))
