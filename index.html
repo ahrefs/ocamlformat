@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>OCamlFormat configurator</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script type="text/javascript" src="./ocamlformat.bc.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 1px;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .flex-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 800px) {
+      .flex-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex-column">
+    <div class="flex-row">
+      <div style="font-size: larger; font-weight: 700;">
+        OCamlFormat configurator
+      </div>
+      <div style="margin-left: auto;">
+        Made by <a href="https://ahrefs.com">Ahrefs</a> -
+        Check our <a href="https://ahrefs.com/jobs">job openings</a> -
+        Code available on <a href="https://github.com/ahrefs/ocamlformat/tree/louis/web-ui/bin/web-ui">github</a>
+      </div>
+    </div>
+    <div class="flex-row">
+      <div class="flex-column">
+        <div class="flex-row">
+          <label for="code">OCaml code</label>
+          <button type="button" id="format">format</button>
+        </div>
+        <textarea name="code" id="code" rows="50" cols="120"></textarea>
+      </div>
+      <div class="flex-column">
+        <div class="flex-row">
+          <label for="config">OCamlFormat config
+          </label>
+          <a
+            href="https://raw.githubusercontent.com/ocaml-ppx/ocamlformat/main/ocamlformat-help.txt">(documentation)</a>
+        </div>
+        <textarea name="config" id="config" rows="8" cols="80" placeholder="profile=default"></textarea>
+        <div id="options"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
