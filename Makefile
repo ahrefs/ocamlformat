@@ -53,3 +53,10 @@ bench:
 web-ui-install:
 	@dune build ocamlformat-web-ui.install
 	@dune install ocamlformat-web-ui --prefix=_build/web-ui --sections=bin
+
+web-ui-publish: web-ui-install
+	git checkout gh-pages
+	cp _build/web-ui/bin/* .
+	git add ./index.html ./ocamlformat.bc.js
+	git commit -m "update site"
+	@echo "git push to complete the publication"
