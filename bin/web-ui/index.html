@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-  <title>OCamlFormat</title>
+  <title>OCamlFormat configurator</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <script type="text/javascript" src="./ocamlformat.bc.js"></script>
   <style>
@@ -32,20 +32,27 @@
 
 <body>
   <div class="flex-column">
-    <div>
-      <a href="https://raw.githubusercontent.com/ocaml-ppx/ocamlformat/main/ocamlformat-help.txt">OCamlFormat
-        documentation</a>
-      <button type="button" id="format">format</button>
+    <div class="flex-row">
+      OCamlFormat configurator -
+      Made by <a href="https://ahrefs.com">Ahrefs</a> -
+      Do you like OCaml? See our <a href="https://ahrefs.com/jobs">job openings</a> -
+      Code available on <a href="https://github.com/ahrefs/ocamlformat/tree/louis/web-ui/bin/web-ui">github</a>
     </div>
     <div class="flex-row">
       <div class="flex-column">
-        <div>
+        <div class="flex-row">
           <label for="code">OCaml code</label>
+          <button type="button" id="format">format</button>
         </div>
         <textarea name="code" id="code" rows="50" cols="120"></textarea>
       </div>
       <div class="flex-column">
-        <label for="config">OCamlFormat config</label>
+        <div class="flex-row">
+          <label for="config">OCamlFormat config
+          </label>
+          <a
+            href="https://raw.githubusercontent.com/ocaml-ppx/ocamlformat/main/ocamlformat-help.txt">(documentation)</a>
+        </div>
         <textarea name="config" id="config" rows="8" cols="80" placeholder="profile=default"></textarea>
         <div id="options"></div>
       </div>
