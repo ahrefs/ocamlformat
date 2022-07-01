@@ -7,3 +7,10 @@
  (libraries ocamlformat js_of_ocaml)
  (preprocess
   (pps js_of_ocaml-ppx)))
+
+(install
+ (package ocamlformat-web-ui)
+ (section bin)
+ (files
+  (main.bc.js as ocamlformat.bc.js)
+  index.html))
