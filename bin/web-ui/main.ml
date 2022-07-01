@@ -418,7 +418,7 @@ let onload _event =
             List.fold config_options_numbers ~init:config
               ~f:(fun conf update -> update conf)
           in
-          Ocamlformat.Conf.print_config config ;
+          (* Ocamlformat.Conf.print_config config ; *)
           let code_formatted = format code_to_format config in
           let () =
             match code_formatted with

@@ -1,0 +1,1 @@
+../../_build/default/bin/web-ui/main.bc.js
