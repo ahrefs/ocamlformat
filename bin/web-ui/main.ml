@@ -360,6 +360,7 @@ let get_element_exn element_id coerce =
 let onload _event =
   let () =
     let d = Html.document in
+    debug "ocamlformat version %s" Ocamlformat.Version.current ;
     let code_input = get_element_exn "code" Html.CoerceTo.textarea in
     let config_input = get_element_exn "config" Html.CoerceTo.textarea in
     let config_options_div = get_element_exn "options" Html.CoerceTo.div in
