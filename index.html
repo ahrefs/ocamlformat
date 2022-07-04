@@ -48,16 +48,17 @@
           <label for="code">OCaml code</label>
           <button type="button" id="format">format</button>
         </div>
-        <textarea name="code" id="code" rows="50" cols="120"></textarea>
+        <textarea name="code" id="code" rows="50" cols="120" spellcheck="false"></textarea>
       </div>
       <div class="flex-column">
         <div class="flex-row">
           <label for="config">OCamlFormat config
           </label>
-          <a
-            href="https://raw.githubusercontent.com/ocaml-ppx/ocamlformat/main/ocamlformat-help.txt">(documentation)</a>
+          (<a
+            href="https://raw.githubusercontent.com/ocaml-ppx/ocamlformat/main/ocamlformat-help.txt">documentation</a>)
         </div>
-        <textarea name="config" id="config" rows="8" cols="80" placeholder="profile=default"></textarea>
+        <textarea name="config" id="config" rows="8" cols="80" placeholder="profile=default"
+          spellcheck="false"></textarea>
         <div id="options"></div>
       </div>
     </div>
