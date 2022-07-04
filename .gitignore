@@ -1,6 +1,7 @@
 .merlin
 /_build
 /ocamlformat.install
+/ocamlformat-web-ui.install
 /test-extra/code
 /_opam
 /_coverage
