@@ -51,7 +51,7 @@ bench:
 	@dune exec bench/bench.exe
 
 web-ui-install:
-	@dune build ocamlformat-web-ui.install
+	@dune build -p ocamlformat,ocamlformat-web-ui
 	@dune install ocamlformat-web-ui --prefix=_build/web-ui --sections=bin
 
 web-ui-publish: web-ui-install
