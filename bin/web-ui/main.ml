@@ -425,6 +425,11 @@ let onload _event =
             match code_formatted with
             | Ok code_formatted ->
                 code_input##.value := Js.string code_formatted
+                (* somehow, we have to replace above line with
+                let formatted = Js.string code_formatted in
+                (* editor is attached to window object *)
+                editor.doc.setValue(formatted)
+                *)
             | Error _e -> ()
           in
           Js._true ) ;
