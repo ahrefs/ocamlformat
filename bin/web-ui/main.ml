@@ -361,7 +361,6 @@ let onload _event =
   let () =
     let d = Html.document in
     debug "ocamlformat version %s" Ocamlformat.Version.current ;
-    let code_input = get_element_exn "code" Html.CoerceTo.textarea in
     let config_input = get_element_exn "config" Html.CoerceTo.textarea in
     let config_options_div = get_element_exn "options" Html.CoerceTo.div in
     let format_button = get_element_exn "format" Html.CoerceTo.button in
@@ -408,7 +407,9 @@ let onload _event =
     in
     format_button##.onclick :=
       Html.handler (fun _event ->
-          let code_to_format = Js.to_string code_input##.value in
+          let code_to_format =
+            Js.Unsafe.eval_string "editor.doc.getValue()"
+          in
           let config = Js.to_string config_input##.value in
           let config, _config_errors = make_config config in
           let config =
@@ -420,16 +421,12 @@ let onload _event =
               ~f:(fun conf update -> update conf)
           in
           (* Ocamlformat.Conf.print_config config ; *)
-          let code_formatted = format code_to_format config in
+          let code_formatted = format (Js.to_string code_to_format) config in
           let () =
             match code_formatted with
             | Ok code_formatted ->
-                code_input##.value := Js.string code_formatted
-                (* somehow, we have to replace above line with
-                let formatted = Js.string code_formatted in
-                (* editor is attached to window object *)
-                editor.doc.setValue(formatted)
-                *)
+                Js.Unsafe.eval_string
+                  (Printf.sprintf "editor.doc.setValue(`%s`)" code_formatted)
             | Error _e -> ()
           in
           Js._true ) ;
