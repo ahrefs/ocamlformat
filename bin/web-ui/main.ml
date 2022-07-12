@@ -425,8 +425,12 @@ let onload _event =
           let () =
             match code_formatted with
             | Ok code_formatted ->
+                let escaped =
+                  Js.to_string (Js.escape (Js.string code_formatted))
+                in
                 Js.Unsafe.eval_string
-                  (Printf.sprintf "editor.doc.setValue(`%s`)" code_formatted)
+                  (Printf.sprintf "editor.doc.setValue(unescape('%s'))"
+                     escaped )
             | Error _e -> ()
           in
           Js._true ) ;
