@@ -407,8 +407,15 @@ let onload _event =
     in
     format_button##.onclick :=
       Html.handler (fun _event ->
-          let code_to_format =
-            Js.Unsafe.eval_string "editor.doc.getValue()"
+          (* Bind Codemirror api for ocaml
+             http://ocsigen.org/js_of_ocaml/latest/manual/bindings *)
+          let editor_doc_get_value : unit -> Js.js_string Js.t =
+            Js.Unsafe.fun_call Js.Unsafe.global##.editor##.doc##.getValue [||]
+          in
+          let editor_doc_set_value (s : Js.js_string Js.t) : unit =
+            Js.Unsafe.fun_call
+              Js.Unsafe.global##.editor##.doc##.setValue
+              [|Js.Unsafe.inject s|]
           in
           let config = Js.to_string config_input##.value in
           let config, _config_errors = make_config config in
@@ -421,16 +428,13 @@ let onload _event =
               ~f:(fun conf update -> update conf)
           in
           (* Ocamlformat.Conf.print_config config ; *)
-          let code_formatted = format (Js.to_string code_to_format) config in
+          let code_formatted =
+            format (Js.to_string (editor_doc_get_value ())) config
+          in
           let () =
             match code_formatted with
             | Ok code_formatted ->
-                let escaped =
-                  Js.to_string (Js.escape (Js.string code_formatted))
-                in
-                Js.Unsafe.eval_string
-                  (Printf.sprintf "editor.doc.setValue(unescape('%s'))"
-                     escaped )
+                editor_doc_set_value (Js.string code_formatted)
             | Error _e -> ()
           in
           Js._true ) ;
