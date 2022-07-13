@@ -15,9 +15,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/mode/mllike/mllike.min.js"
     integrity="sha512-vN71zIsnXQRCsHoCiPbobn2ROoOaOfsuY2PW5Dh4Pl7zFVXJ/IQFxT8yCmZjdyehWrZPLsf+xL75jQp+T++Cnw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/addon/edit/matchbrackets.min.js"
-    integrity="sha512-GSYCbN/le5gNmfAWVEjg1tKnOH7ilK6xCLgA7c48IReoIR2g2vldxTM6kZlN6o3VtWIe6fHu/qhwxIt11J8EBA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -78,11 +75,10 @@
     </div>
   </div>
   <script>
-    const editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-      smartIndent: true,
+    window.editor = CodeMirror.fromTextArea(document.getElementById('code'), {
       mode: 'text/x-ocaml',
+      smartIndent: true,
       lineNumbers: true,
-      matchBrackets: true
     });
 
     editor.setSize('100%', '100%');
