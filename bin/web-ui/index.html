@@ -38,6 +38,10 @@
         flex-direction: column;
       }
     }
+
+    .CodeMirror-wrap {
+      word-break: break-word;
+    }
   </style>
 </head>
 
@@ -79,6 +83,7 @@
       mode: 'text/x-ocaml',
       smartIndent: true,
       lineNumbers: true,
+      lineWrapping: true,
     });
 
     editor.setSize('100%', '100%');
