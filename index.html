@@ -6,20 +6,28 @@
   <title>OCamlFormat configurator</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <script type="text/javascript" src="./ocamlformat.bc.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/codemirror.min.css"
+    integrity="sha512-uf06llspW44/LZpHzHT6qBOIVODjWtv4MxCricRxkzvopAlSWnTf6hpZTFxuuZcuNE9CBQhqE0Seu1CoRk84nQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/codemirror.min.js"
+    integrity="sha512-n7rucz/qOiYAkYK1CVKuqygMAnohil8Rg6kKAv0IsF2xnHUhnVyD5K9GO25OUvc+WEVZVu+NIYLblIUpkBMNvQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/mode/mllike/mllike.min.js"
+    integrity="sha512-vN71zIsnXQRCsHoCiPbobn2ROoOaOfsuY2PW5Dh4Pl7zFVXJ/IQFxT8yCmZjdyehWrZPLsf+xL75jQp+T++Cnw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <style>
-    * {
-      box-sizing: border-box;
-      padding: 1px;
-    }
-
     .flex-row {
+      width: 100%;
       display: flex;
       flex-direction: row;
+      padding: 3px;
     }
 
     .flex-column {
       display: flex;
       flex-direction: column;
+      flex-basis: 100%;
+      padding: 3px;
     }
 
     @media (max-width: 800px) {
@@ -27,6 +35,13 @@
         flex-direction: column;
       }
     }
+
+    .CodeMirror {
+      border: 1px solid #aaa;
+      height: 100%;
+      width: 100%;
+    }
+
   </style>
 </head>
 
@@ -48,7 +63,7 @@
           <label for="code">OCaml code</label>
           <button type="button" id="format">format</button>
         </div>
-        <textarea name="code" id="code" rows="50" cols="120" spellcheck="false"></textarea>
+        <textarea name="code" id="code" class="language-mllike" spellcheck="false"></textarea>
       </div>
       <div class="flex-column">
         <div class="flex-row">
@@ -63,6 +78,14 @@
       </div>
     </div>
   </div>
+  <script>
+    window.editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+      mode: 'text/x-ocaml',
+      smartIndent: true,
+      lineNumbers: true,
+      lineWrapping: true,
+    });
+  </script>
 </body>
 
 </html>
