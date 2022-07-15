@@ -361,7 +361,6 @@ let onload _event =
   let () =
     let d = Html.document in
     debug "ocamlformat version %s" Ocamlformat.Version.current ;
-    let code_input = get_element_exn "code" Html.CoerceTo.textarea in
     let config_input = get_element_exn "config" Html.CoerceTo.textarea in
     let config_options_div = get_element_exn "options" Html.CoerceTo.div in
     let format_button = get_element_exn "format" Html.CoerceTo.button in
@@ -408,7 +407,16 @@ let onload _event =
     in
     format_button##.onclick :=
       Html.handler (fun _event ->
-          let code_to_format = Js.to_string code_input##.value in
+          (* Bind Codemirror api for ocaml
+             http://ocsigen.org/js_of_ocaml/latest/manual/bindings *)
+          let editor_doc_get_value : unit -> Js.js_string Js.t =
+            Js.Unsafe.fun_call Js.Unsafe.global##.editor##.doc##.getValue [||]
+          in
+          let editor_doc_set_value (s : Js.js_string Js.t) : unit =
+            Js.Unsafe.fun_call
+              Js.Unsafe.global##.editor##.doc##.setValue
+              [|Js.Unsafe.inject s|]
+          in
           let config = Js.to_string config_input##.value in
           let config, _config_errors = make_config config in
           let config =
@@ -420,11 +428,13 @@ let onload _event =
               ~f:(fun conf update -> update conf)
           in
           (* Ocamlformat.Conf.print_config config ; *)
-          let code_formatted = format code_to_format config in
+          let code_formatted =
+            format (Js.to_string (editor_doc_get_value ())) config
+          in
           let () =
             match code_formatted with
             | Ok code_formatted ->
-                code_input##.value := Js.string code_formatted
+                editor_doc_set_value (Js.string code_formatted)
             | Error _e -> ()
           in
           Js._true ) ;
