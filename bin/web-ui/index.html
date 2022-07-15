@@ -38,6 +38,13 @@
         flex-direction: column;
       }
     }
+
+    .CodeMirror {
+      border: 1px solid #aaa;
+      height: 100%;
+      width: 100%;
+    }
+
   </style>
 </head>
 
@@ -81,10 +88,6 @@
       lineNumbers: true,
       lineWrapping: true,
     });
-
-    editor.setSize('100%', '100%');
-
-    editor.save();
   </script>
 </body>
 
