@@ -15,69 +15,43 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/mode/mllike/mllike.min.js"
     integrity="sha512-vN71zIsnXQRCsHoCiPbobn2ROoOaOfsuY2PW5Dh4Pl7zFVXJ/IQFxT8yCmZjdyehWrZPLsf+xL75jQp+T++Cnw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <style>
-    .flex-row {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      padding: 3px;
-    }
-
-    .flex-column {
-      display: flex;
-      flex-direction: column;
-      flex-basis: 100%;
-      padding: 3px;
-    }
-
-    @media (max-width: 800px) {
-      .flex-row {
-        flex-direction: column;
-      }
-    }
-
-    .CodeMirror {
-      border: 1px solid #aaa;
-      height: 100%;
-      width: 100%;
-    }
-
-  </style>
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/index.css">
 </head>
 
 <body>
-  <div class="flex-column">
-    <div class="flex-row">
-      <div style="font-size: larger; font-weight: 700;">
-        OCamlFormat configurator
-      </div>
-      <div style="margin-left: auto;">
-        Made by <a href="https://ahrefs.com">Ahrefs</a> -
-        Check our <a href="https://ahrefs.com/jobs">job openings</a> -
-        Code available on <a href="https://github.com/ahrefs/ocamlformat/tree/ahrefs/web-ui/bin/web-ui">github</a>
-      </div>
-    </div>
-    <div class="flex-row">
-      <div class="flex-column">
-        <div class="flex-row">
+  <header>
+    <h1>OCamlFormat configurator</h1>
+  </header>
+  <main>
+    <div class="flex-column">
+      <div class="flex-row">
+        <h2>
           <label for="code">OCaml code</label>
           <button type="button" id="format">format</button>
-        </div>
-        <textarea name="code" id="code" class="language-mllike" spellcheck="false"></textarea>
+        </h2>
       </div>
-      <div class="flex-column">
-        <div class="flex-row">
-          <label for="config">OCamlFormat config
-          </label>
-          (<a
-            href="https://raw.githubusercontent.com/ocaml-ppx/ocamlformat/main/ocamlformat-help.txt">documentation</a>)
-        </div>
-        <textarea name="config" id="config" rows="8" cols="80" placeholder="profile=default"
-          spellcheck="false"></textarea>
-        <div id="options"></div>
-      </div>
+      <textarea name="code" id="code" class="language-mllike" spellcheck="false"></textarea>
     </div>
-  </div>
+    <div class="flex-column">
+      <h2>
+        <label for="config">OCamlFormat config
+        </label>
+        (<a
+          href="https://raw.githubusercontent.com/ocaml-ppx/ocamlformat/main/ocamlformat-help.txt">documentation</a>)
+      </h2>
+      <textarea name="config" id="config" rows="8" cols="80" placeholder="profile=default"
+        spellcheck="false"></textarea>
+      <div id="options"></div>
+    </div>
+  </main>
+  <footer>
+    <p>
+      Made by <a href="https://ahrefs.com">Ahrefs</a> -
+      Check our <a href="https://ahrefs.com/jobs">job openings</a> -
+      Code available on <a href="https://github.com/ahrefs/ocamlformat/tree/ahrefs/web-ui/bin/web-ui">github</a>
+    </p>
+  </footer>
   <script>
     window.editor = CodeMirror.fromTextArea(document.getElementById('code'), {
       mode: 'text/x-ocaml',

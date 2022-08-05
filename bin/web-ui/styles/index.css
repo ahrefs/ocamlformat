@@ -1,0 +1,74 @@
+/* Base */
+:root {
+  --text-color: rgb(0, 0, 0);
+  --bg-color: rgb(244, 245, 246);
+  --link-color: rgb(5, 74, 218);
+  --link-hover-color: rgb(255, 136, 0);
+  --border-color: rgb(170, 170, 170);
+}
+
+body {
+  font-size: 18px;
+  padding: 0 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+header {
+  padding: 1rem 0 3rem 0;
+}
+
+footer {
+  padding: 5rem 0 1rem 0;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.2rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--link-color);
+  transition: all 100ms ease-in-out;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+textarea,
+.CodeMirror {
+  width: 100%;
+  border: 1px solid var(--border-color);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.CodeMirror {
+  height: 100%;
+}
+
+#options {
+  margin-top: 1.5rem;
+}
