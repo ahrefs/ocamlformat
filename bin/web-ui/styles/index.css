@@ -9,7 +9,7 @@
 
 body {
   font-size: 18px;
-  padding: 0 2rem;
+  padding: 0 2rem 4rem 2rem;
   background-color: var(--bg-color);
   color: var(--text-color);
 }
@@ -21,10 +21,6 @@ footer {
 
 header {
   padding: 1rem 0 3rem 0;
-}
-
-footer {
-  padding: 5rem 0 1rem 0;
 }
 
 h1 {
@@ -94,4 +90,9 @@ textarea {
 
 #options > div input {
   width: 7.5rem;
+}
+
+.links {
+  text-align: right;
+  margin-bottom: 2rem;
 }

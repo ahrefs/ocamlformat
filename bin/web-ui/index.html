@@ -21,6 +21,14 @@
 
 <body>
   <header>
+    <div class="links">
+      <p>
+        Made by <a href="https://ahrefs.com">Ahrefs</a> -
+        Check our <a href="https://ahrefs.com/jobs">job openings</a> -
+        Code available on <a href="https://github.com/ahrefs/ocamlformat/tree/ahrefs/web-ui/bin/web-ui">github</a>
+      </p>
+    </div>
+
     <h1>OCamlFormat configurator</h1>
   </header>
   <main>
@@ -45,13 +53,6 @@
       <div id="options"></div>
     </div>
   </main>
-  <footer>
-    <p>
-      Made by <a href="https://ahrefs.com">Ahrefs</a> -
-      Check our <a href="https://ahrefs.com/jobs">job openings</a> -
-      Code available on <a href="https://github.com/ahrefs/ocamlformat/tree/ahrefs/web-ui/bin/web-ui">github</a>
-    </p>
-  </footer>
   <script>
     window.editor = CodeMirror.fromTextArea(document.getElementById('code'), {
       mode: 'text/x-ocaml',
