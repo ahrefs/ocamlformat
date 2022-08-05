@@ -1,0 +1,32 @@
+name: Web Configurator
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+        ocaml-compiler:
+          - 4.14.x
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Use OCaml ${{ matrix.ocaml-compiler }}
+        uses: ocaml/setup-ocaml@v2
+        with:
+          opam-pin: false
+          opam-depext: false
+          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+
+      - run: opam install ocamlformat.0.23.0 js_of_ocaml js_of_ocaml-ppx
+
+      - run: opam exec -- make web-ui-install
