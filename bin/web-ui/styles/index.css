@@ -49,6 +49,11 @@ a:hover {
   color: var(--link-hover-color);
 }
 
+button {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 main {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -63,6 +68,7 @@ textarea,
 
 textarea {
   resize: vertical;
+  font-size: 1rem;
 }
 
 .CodeMirror {
@@ -71,4 +77,21 @@ textarea {
 
 #options {
   margin-top: 1.5rem;
+}
+
+#options > div {
+  margin-bottom: .3rem;
+}
+
+#options > div label {
+  min-width: 18rem;
+  display: inline-block;
+}
+
+#options > div select {
+  width: 8rem;
+}
+
+#options > div input {
+  width: 7.5rem;
 }
