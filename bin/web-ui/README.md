@@ -5,7 +5,8 @@
 ```bash
 cd $(git rev-parse --show-toplevel)
 opam sw create . 4.14.0 --no-install
-opam install ocamlformat js_of_ocaml js_of_ocaml-ppx
+eval $(opam env)
+opam install ocamlformat.0.23.0 js_of_ocaml js_of_ocaml-ppx
 cd bin/web-ui
 dune build
 ```
