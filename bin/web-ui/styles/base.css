@@ -1,0 +1,58 @@
+:root {
+  --bg-color: rgba(35, 40, 44, 1);
+  --text-secondary: rgba(255, 255, 255, 0.45);
+  --text-primary: rgba(255, 255, 255, 0.9);
+  --focus-border-color: rgba(0, 192, 234, 1);
+  --border-color: rgb(170, 170, 170);
+}
+
+body {
+  font-family: 'Inter';
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0 48px;
+  background-color: var(--bg-color);
+  color: var(--text-secondary);
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+header {
+  padding: 1rem 0 3rem 0;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.2rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--text-secondary);
+  transition: all 100ms ease-in-out;
+  text-decoration: none;
+  border-bottom: 1px solid var(--text-secondary);
+}
+
+a:hover {
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+a:focus {
+  border: 1px solid var(--focus-border-color);
+}
+
+button {
+  font-size: 1rem;
+  cursor: pointer;
+}

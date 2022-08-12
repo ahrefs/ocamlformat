@@ -1,54 +1,6 @@
-/* Base */
-:root {
-  --text-color: rgb(0, 0, 0);
-  --bg-color: rgb(244, 245, 246);
-  --link-color: rgb(5, 74, 218);
-  --link-hover-color: rgb(255, 136, 0);
-  --border-color: rgb(170, 170, 170);
-}
-
-body {
-  font-size: 18px;
-  padding: 0 2rem 4rem 2rem;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-header,
-footer {
-  text-align: center;
-}
-
-header {
-  padding: 1rem 0 3rem 0;
-}
-
-h1 {
-  font-size: 2rem;
-  line-height: 2.2rem;
-  font-weight: bold;
-}
-
-h2 {
-  font-size: 1.3rem;
-  line-height: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-a {
-  color: var(--link-color);
-  transition: all 100ms ease-in-out;
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--link-hover-color);
-}
-
-button {
-  font-size: 1rem;
-  cursor: pointer;
-}
+@import 'reset.css';
+@import 'fonts.css';
+@import 'base.css';
 
 main {
   display: grid;
