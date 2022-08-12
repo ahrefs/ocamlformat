@@ -8,6 +8,7 @@
   --accent-hover-color: rgba(232, 131, 74, 1);
   --acent-active-color: rgba(191, 85, 24, 1);
   --on-bright-color: rgba(255, 255, 255, 1);
+  --code-bg-color: rgba(255, 255, 255, 0.08);
 }
 
 body {
