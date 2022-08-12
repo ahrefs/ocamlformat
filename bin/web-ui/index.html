@@ -20,37 +20,35 @@
 
 <body>
   <header>
-    <div class="links">
-      <p>
-        Made by <a href="https://ahrefs.com">Ahrefs</a> &#8226;
-        Check our <a href="https://ahrefs.com/jobs">job openings</a> &#8226;
-        Code available on <a href="https://github.com/ahrefs/ocamlformat/tree/ahrefs/web-ui/bin/web-ui">Github</a>
-      </p>
-    </div>
-
     <h1>OCamlFormat configurator</h1>
+
+    <p>
+      Made by <a href="https://ahrefs.com">Ahrefs</a> &#8226;
+      Check our <a href="https://ahrefs.com/jobs">job openings</a> &#8226;
+      Code available on <a href="https://github.com/ahrefs/ocamlformat/tree/ahrefs/web-ui/bin/web-ui">Github</a>
+    </p>
   </header>
   <main>
-    <div class="flex-column">
-      <div class="flex-row">
-        <h2>
-          <label for="code">OCaml code</label>
-          <button type="button" id="format">format</button>
-        </h2>
-      </div>
-      <textarea name="code" id="code" class="language-mllike" spellcheck="false"></textarea>
-    </div>
-    <div class="flex-column">
+    <section>
       <h2>
-        <label for="config">OCamlFormat config
+        <label for="config">OCamlFormat config. 
         </label>
-        (<a
-          href="https://raw.githubusercontent.com/ocaml-ppx/ocamlformat/main/ocamlformat-help.txt">documentation</a>)
+        <a
+          href="https://raw.githubusercontent.com/ocaml-ppx/ocamlformat/main/ocamlformat-help.txt">Documentation</a>
       </h2>
       <textarea name="config" id="config" rows="8" cols="80" placeholder="profile=default"
         spellcheck="false"></textarea>
       <div id="options"></div>
-    </div>
+    </section>
+
+    <section>
+      <h2>
+        <label for="code">OCaml code</label>
+        <button type="button" id="format">format</button>
+      </h2>
+
+      <textarea name="code" id="code" class="language-mllike" spellcheck="false"></textarea>
+    </section>
   </main>
   <script>
     window.editor = CodeMirror.fromTextArea(document.getElementById('code'), {

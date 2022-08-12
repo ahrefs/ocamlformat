@@ -3,7 +3,7 @@
   --text-secondary: rgba(255, 255, 255, 0.45);
   --text-primary: rgba(255, 255, 255, 0.9);
   --focus-border-color: rgba(0, 192, 234, 1);
-  --border-color: rgb(170, 170, 170);
+  --border-color: rgba(255, 255, 255, 0.15);
 }
 
 body {
@@ -21,19 +21,26 @@ footer {
 }
 
 header {
-  padding: 1rem 0 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+h1,
+h2 {
+  color: var(--text-primary);
+  font-weight: 700;
 }
 
 h1 {
-  font-size: 2rem;
-  line-height: 2.2rem;
-  font-weight: bold;
+  font-size: 18px;
+  line-height: 20px;
 }
 
 h2 {
-  font-size: 1.3rem;
-  line-height: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 16px;
 }
 
 a {

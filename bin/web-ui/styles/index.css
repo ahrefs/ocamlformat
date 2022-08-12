@@ -5,7 +5,8 @@
 main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
+  grid-gap: 48px;
+  padding-top: 32px;
 }
 
 textarea,
@@ -42,9 +43,4 @@ textarea {
 
 #options > div input {
   width: 7.5rem;
-}
-
-.links {
-  text-align: right;
-  margin-bottom: 2rem;
 }
