@@ -3,3 +3,9 @@
   src:  url('./../fonts/Inter-Regular.woff2') format('woff2'),
         url('./../fonts/Inter-Regular.woff') format('woff');
 }
+
+@font-face {
+  font-family: 'Menlo';
+  src:  url('./../fonts/Menlo-Regular.woff2') format('woff2'),
+        url('./../fonts/Menlo-Regular.woff') format('woff');
+}

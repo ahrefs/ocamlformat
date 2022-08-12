@@ -6,7 +6,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 48px;
-  padding-top: 32px;
+  padding: 32px 0 64px;
 }
 
 textarea,
@@ -24,8 +24,14 @@ textarea {
   height: 100%;
 }
 
+.options-wrapper h2 {
+  padding: 32px 0 16px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
 #options {
   margin-top: 1.5rem;
+  font-family: 'Menlo';
 }
 
 #options > div {
@@ -35,6 +41,7 @@ textarea {
 #options > div label {
   min-width: 18rem;
   display: inline-block;
+  color: var(--text-primary);
 }
 
 #options > div select {

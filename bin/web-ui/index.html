@@ -31,19 +31,27 @@
   <main>
     <section>
       <h2>
-        <label for="config">OCamlFormat config. 
+        <label for="config">1. Add your config.
         </label>
         <a
           href="https://raw.githubusercontent.com/ocaml-ppx/ocamlformat/main/ocamlformat-help.txt">Documentation</a>
       </h2>
       <textarea name="config" id="config" rows="8" cols="80" placeholder="profile=default"
         spellcheck="false"></textarea>
-      <div id="options"></div>
+
+      <div class="options-wrapper">
+        <h2>
+          <label for="options">2. Adjust the config. Matching options will be overridden.
+          </label>
+        </h2>
+
+        <div id="options"></div>
+      </div>
     </section>
 
     <section>
       <h2>
-        <label for="code">OCaml code</label>
+        <label for="code">3. Paste a code to format.</label>
         <button type="button" id="format">format</button>
       </h2>
 
