@@ -4,6 +4,10 @@
   --text-primary: rgba(255, 255, 255, 0.9);
   --focus-border-color: rgba(0, 192, 234, 1);
   --border-color: rgba(255, 255, 255, 0.15);
+  --accent-color: rgba(227, 101, 28, 1);
+  --accent-hover-color: rgba(232, 131, 74, 1);
+  --acent-active-color: rgba(191, 85, 24, 1);
+  --on-bright-color: rgba(255, 255, 255, 1);
 }
 
 body {
@@ -47,12 +51,13 @@ a {
   color: var(--text-secondary);
   transition: all 100ms ease-in-out;
   text-decoration: none;
+  border: 1px solid transparent;
   border-bottom: 1px solid var(--text-secondary);
 }
 
 a:hover {
   color: var(--text-primary);
-  border-color: var(--text-primary);
+  border-bottom-color: var(--text-primary);
 }
 
 a:focus {
@@ -60,6 +65,25 @@ a:focus {
 }
 
 button {
-  font-size: 1rem;
+  font-weight: 700;
   cursor: pointer;
+  background-color: var(--accent-color);
+  border-radius: 6px;
+  text-align: center;
+  border: none;
+  color: var(--on-bright-color);
+  padding: 6px 12px;
+  border: 2px solid transparent;
+}
+
+button:hover {
+  background-color: var(--accent-hover-color);
+}
+
+button:active {
+  background-color: var(-acent-active-color);
+}
+
+button:focus {
+  border: 2px solid var(--focus-border-color);
 }

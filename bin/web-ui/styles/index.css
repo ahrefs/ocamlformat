@@ -6,7 +6,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 48px;
-  padding: 32px 0 64px;
+  padding: 32px 0 96px;
 }
 
 textarea,
@@ -35,7 +35,7 @@ textarea {
 }
 
 #options > div {
-  margin-bottom: .3rem;
+  margin-bottom: 16px;
 }
 
 #options > div label {
@@ -50,4 +50,9 @@ textarea {
 
 #options > div input {
   width: 7.5rem;
+}
+
+.with-format-button {
+  display: flex;
+  justify-content: space-between;
 }
