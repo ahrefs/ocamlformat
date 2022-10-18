@@ -2,13 +2,18 @@
   --bg-color: rgba(35, 40, 44, 1);
   --text-secondary: rgba(255, 255, 255, 0.45);
   --text-primary: rgba(255, 255, 255, 0.9);
+  --text-on-bright-color: rgba(255, 255, 255, 1);
   --focus-border-color: rgba(0, 192, 234, 1);
   --border-color: rgba(255, 255, 255, 0.15);
   --accent-color: rgba(227, 101, 28, 1);
   --accent-hover-color: rgba(232, 131, 74, 1);
-  --acent-active-color: rgba(191, 85, 24, 1);
+  --accent-active-color: rgba(191, 85, 24, 1);
   --on-bright-color: rgba(255, 255, 255, 1);
   --code-bg-color: rgba(255, 255, 255, 0.08);
+  --option-bg-color: rgba(255, 255, 255, 0.1);
+  --option-hover-bg-color: rgba(255, 255, 255, 0.2);
+  --option-active-bg-color: rgba(255, 255, 255, 0.3);
+  --border-radius: 6px;
 }
 
 body {
@@ -65,11 +70,16 @@ a:focus {
   border: 1px solid var(--focus-border-color);
 }
 
+input,
+button,
+textarea {
+  border-radius: var(--border-radius);
+}
+
 button {
   font-weight: 700;
   cursor: pointer;
   background-color: var(--accent-color);
-  border-radius: 6px;
   text-align: center;
   border: none;
   color: var(--on-bright-color);
@@ -82,9 +92,20 @@ button:hover {
 }
 
 button:active {
-  background-color: var(-acent-active-color);
+  background-color: var(-accent-active-color);
 }
 
-button:focus {
+input {
+  background-color: var(--option-bg-color);
+  border: 2px solid transparent;
+  color: var(--on-bright-color);
+  padding: 3px 6px;
+  outline: none;
+}
+
+button:focus,
+input:focus,
+input:focus-visible {
   border: 2px solid var(--focus-border-color);
 }
+

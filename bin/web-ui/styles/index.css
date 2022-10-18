@@ -13,7 +13,6 @@ main {
 textarea,
 .CodeMirror {
   width: 100%;
-  border-radius: 6px;
 }
 
 textarea {
@@ -26,6 +25,7 @@ textarea {
 
 .CodeMirror {
   height: 100%;
+  border-radius: var(--border-radius);
 }
 
 .options-wrapper h2 {
@@ -40,6 +40,7 @@ textarea {
 
 #options > div {
   margin-bottom: 16px;
+  display: flex;
 }
 
 #options > div label {
@@ -54,6 +55,41 @@ textarea {
 
 #options > div input {
   width: 7.5rem;
+}
+
+.variants {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 250px;
+}
+
+.variant {
+  margin: 0 4px 4px 0;
+  padding: 0 6px;
+  background-color: var(--option-bg-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.variant:hover {
+  background-color: var(--option-hover-bg-color);
+}
+
+.variant:active {
+  background-color: var(--option-active-bg-color);
+}
+
+.variant[data-active] {
+  background-color: var(--accent-color);
+  color: var(--text-on-bright-color);
+}
+
+.variant[data-active]:hover {
+  background-color: var(--accent-hover-color);
+}
+
+.variant[data-active]:active {
+  background-color: var(--accent-active-color);
 }
 
 .with-format-button {
