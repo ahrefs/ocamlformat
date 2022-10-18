@@ -1,0 +1,111 @@
+:root {
+  --bg-color: rgba(35, 40, 44, 1);
+  --text-secondary: rgba(255, 255, 255, 0.45);
+  --text-primary: rgba(255, 255, 255, 0.9);
+  --text-on-bright-color: rgba(255, 255, 255, 1);
+  --focus-border-color: rgba(0, 192, 234, 1);
+  --border-color: rgba(255, 255, 255, 0.15);
+  --accent-color: rgba(227, 101, 28, 1);
+  --accent-hover-color: rgba(232, 131, 74, 1);
+  --accent-active-color: rgba(191, 85, 24, 1);
+  --on-bright-color: rgba(255, 255, 255, 1);
+  --code-bg-color: rgba(255, 255, 255, 0.08);
+  --option-bg-color: rgba(255, 255, 255, 0.1);
+  --option-hover-bg-color: rgba(255, 255, 255, 0.2);
+  --option-active-bg-color: rgba(255, 255, 255, 0.3);
+  --border-radius: 6px;
+}
+
+body {
+  font-family: 'Inter';
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0 48px;
+  background-color: var(--bg-color);
+  color: var(--text-secondary);
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+h1,
+h2 {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 18px;
+  line-height: 20px;
+}
+
+h2 {
+  margin-bottom: 16px;
+}
+
+a {
+  color: var(--text-secondary);
+  transition: all 100ms ease-in-out;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-bottom: 1px solid var(--text-secondary);
+}
+
+a:hover {
+  color: var(--text-primary);
+  border-bottom-color: var(--text-primary);
+}
+
+a:focus {
+  border: 1px solid var(--focus-border-color);
+}
+
+input,
+button,
+textarea {
+  border-radius: var(--border-radius);
+}
+
+button {
+  font-weight: 700;
+  cursor: pointer;
+  background-color: var(--accent-color);
+  text-align: center;
+  border: none;
+  color: var(--on-bright-color);
+  padding: 6px 12px;
+  border: 2px solid transparent;
+}
+
+button:hover {
+  background-color: var(--accent-hover-color);
+}
+
+button:active {
+  background-color: var(-accent-active-color);
+}
+
+input {
+  background-color: var(--option-bg-color);
+  border: 2px solid transparent;
+  color: var(--on-bright-color);
+  padding: 3px 6px;
+  outline: none;
+}
+
+button:focus,
+input:focus,
+input:focus-visible {
+  border: 2px solid var(--focus-border-color);
+}
+

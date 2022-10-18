@@ -371,17 +371,29 @@ let onload _event =
           let l = Html.createLabel d in
           l##.innerText := Js.string name ;
           Dom.appendChild div l ;
-          let s = Html.createSelect ~name:(Js.string name) d in
-          Dom.appendChild div s ;
-          let values = "--" :: values in
+          let w = Html.createDiv d in
+          w##.className := Js.string "variants" ;
+          w##.id := Js.string name ;
+          Dom.appendChild div w ;
           let () =
             List.iter values ~f:(fun v ->
-                let o = Html.createOption d in
-                o##.label := Js.string v ;
-                s##add o Js.null )
+              let o_div = Html.createDiv d in
+              o_div##.className := Js.string "variant" ;
+              o_div##.innerText := Js.string v ;
+              o_div##.onclick := 
+                Html.handler (fun _ -> 
+                  let attr_name = "data-active" in
+                  if (Js.to_bool (o_div##hasAttribute (Js.string attr_name)))
+                  then (o_div##removeAttribute (Js.string attr_name) ;)
+                  else o_div##setAttribute (Js.string attr_name) (Js.string "true") ;
+
+                  Js._false ;
+                ) ;
+              Dom.appendChild w o_div 
+          )
           in
           fun conf ->
-            let i = s##.selectedIndex in
+            let i = 1 in
             let v = List.nth_exn values i in
             update conf v )
     in

@@ -1,0 +1,106 @@
+@import 'reset.css';
+@import 'fonts.css';
+@import 'base.css';
+@import 'theme-dark.css';
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 48px;
+  padding: 32px 0 96px;
+}
+
+textarea,
+.CodeMirror {
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+  background-color: var(--code-bg-color);
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.CodeMirror {
+  height: 100%;
+  border-radius: var(--border-radius);
+}
+
+.options-wrapper h2 {
+  padding: 32px 0 16px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#options {
+  margin-top: 1.5rem;
+  font-family: 'Menlo';
+}
+
+#options > div {
+  margin-bottom: 16px;
+  display: flex;
+}
+
+#options > div label {
+  min-width: 18rem;
+  display: inline-block;
+  color: var(--text-primary);
+}
+
+#options > div select {
+  width: 8rem;
+}
+
+#options > div input {
+  width: 7.5rem;
+}
+
+.variants {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 250px;
+}
+
+.variant {
+  margin: 0 4px 4px 0;
+  padding: 0 6px;
+  background-color: var(--option-bg-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.variant:hover {
+  background-color: var(--option-hover-bg-color);
+}
+
+.variant:active {
+  background-color: var(--option-active-bg-color);
+}
+
+.variant[data-active] {
+  background-color: var(--accent-color);
+  color: var(--text-on-bright-color);
+}
+
+.variant[data-active]:hover {
+  background-color: var(--accent-hover-color);
+}
+
+.variant[data-active]:active {
+  background-color: var(--accent-active-color);
+}
+
+.with-format-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sticky {
+  position: sticky;
+  top: 20px;
+  z-index: 999;
+  float: right;
+  margin-top: -5px;
+}
