@@ -1,6 +1,7 @@
 @import 'reset.css';
 @import 'fonts.css';
 @import 'base.css';
+@import 'theme-dark.css';
 
 main {
   display: grid;
@@ -12,11 +13,15 @@ main {
 textarea,
 .CodeMirror {
   width: 100%;
+  border-radius: 6px;
 }
 
 textarea {
   resize: vertical;
   background-color: var(--code-bg-color);
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .CodeMirror {
